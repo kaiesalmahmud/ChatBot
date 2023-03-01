@@ -68,7 +68,7 @@ responses:
   utter_default:
   - text: "Sorry, I couldn't understand. Please try again."
   utter_iamabot:
-  - text: "I am a chatbot for Robi."
+  - text: "I am your assistant chatbot from Robi HR."
 
 actions:
   - action_submit_leave_application
