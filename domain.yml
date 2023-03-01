@@ -3,80 +3,81 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - thank_you
   - affirm
   - deny
-  - ask_routine_query
-  - ask_common_question
+  - thanks
+  - help
+  - faq
   - connect_hr
-  - submit_feedback
-  - take_action
+  - feedback
+  - leave_request
+  - claim_request
+  - query_box
+  - analytics
+  - dashboard
 
 entities:
-  - query_type
-  - action_type
+  - employee_name
   - leave_type
-  - leave_days
+  - leave_start_date
+  - leave_end_date
   - claim_type
   - claim_amount
-
-slots:
-  query_type:
-    type: categorical
-    values:
-      - routine
-      - common
-  action_type:
-    type: categorical
-    values:
-      - leave
-      - claim
-  leave_type:
-    type: categorical
-    values:
-      - sick
-      - annual
-      - unpaid
-  leave_days:
-    type: unfeaturized
-  claim_type:
-    type: categorical
-    values:
-      - medical
-      - travel
-      - other
-  claim_amount:
-    type: unfeaturized
+  - feedback_text
 
 responses:
   utter_greet:
-  - text: "Hello! How may I assist you today?"
+    - text: "Hello! I am the Robi HR chatbot. How can I assist you today?"
   utter_goodbye:
-  - text: "Goodbye! Have a nice day."
-  utter_ask_routine_query:
-  - text: "Please ask your routine query."
-  utter_ask_common_question:
-  - text: "Please ask your question from the common questions list."
+    - text: "Goodbye! Have a great day."
+  utter_help:
+    - text: "How can I help you today?"
+  utter_faq:
+    - text: "Please visit our website's FAQ section for more information."
   utter_connect_hr:
-  - text: "Connecting you to HR personnel. Please hold on."
-  utter_submit_feedback:
-  - text: "Thanks for your feedback!"
-  utter_leave_application:
-  - text: "Your leave application for {leave_days} days of {leave_type} leave has been submitted successfully."
-  utter_claim_application:
-  - text: "Your {claim_type} claim request of {claim_amount} amount has been submitted successfully."
-  utter_default:
-  - text: "Sorry, I couldn't understand. Please try again."
-  utter_iamabot:
-  - text: "I am your assistant chatbot from Robi HR."
+    - text: "Please contact HR at hr@robi.com or call our HR hotline at 555-5555."
+  utter_leave_request:
+    - text: "Please provide the following information to request leave: leave type, start date, and end date."
+  utter_claim_request:
+    - text: "Please provide the following information to submit a claim: claim type and amount."
+  utter_query_box:
+    - text: "Please provide your query and we will get back to you shortly."
+  utter_feedback:
+    - text: "Thank you for your feedback! We appreciate your input."
+  utter_analytics:
+    - text: "Generating analytics. Please wait."
+  utter_dashboard:
+    - text: "Opening dashboard. Please wait."
 
 actions:
-  - action_submit_leave_application
-  - action_submit_claim_application
-  - action_generate_analytics
-  - action_see_dashboard
-  - action_get_query_box
-  - action_view_faq
+  - utter_greet
+  - utter_goodbye
+  - utter_help
+  - utter_faq
+  - utter_connect_hr
+  - utter_leave_request
+  - utter_claim_request
+  - utter_query_box
+  - utter_feedback
+  - utter_analytics
+  - utter_dashboard
+
+slots:
+  employee_name:
+    type: text
+  leave_type:
+    type: text
+  leave_start_date:
+    type: text
+  leave_end_date:
+    type: text
+  claim_type:
+    type: text
+  claim_amount:
+    type: text
+  feedback_text:
+    type: text
+
 
 session_config:
   session_expiration_time: 60

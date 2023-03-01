@@ -1,13 +1,52 @@
 version: "3.1"
 
 rules:
+  - rule: respond to feedback
+    steps:
+      - intent: feedback
+      - action: utter_feedback
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - rule: respond to leave request
+    steps:
+      - intent: leave_request
+      - action: utter_leave_request
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - rule: respond to claim request
+    steps:
+      - intent: claim_request
+      - action: utter_claim_request
+
+  - rule: respond to query box
+    steps:
+      - intent: query_box
+      - action: utter_query_box
+
+  - rule: generate analytics
+    steps:
+      - intent: analytics
+      - action: utter_analytics
+
+  - rule: open dashboard
+    steps:
+      - intent: dashboard
+      - action: utter_dashboard
+
+  - rule: connect employee to HR
+    steps:
+      - intent: connect_hr
+      - action: utter_connect_hr
+
+  - rule: handle unknown input
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default
+
+  - rule: greet user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye

@@ -3,122 +3,50 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
+    - hello
     - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
+    - good morning
     - good afternoon
+    - good evening
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
     - bye
     - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
     - see you later
+    - take care
 
 - intent: affirm
   examples: |
     - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - sure
+    - absolutely
+    - that's correct
+    - I agree
 
 - intent: deny
   examples: |
     - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
     - not really
+    - that's not right
+    - I don't think so
 
-- intent: mood_great
+- intent: thanks
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - thank you
+    - thanks
+    - thanks a lot
+    - much appreciated
 
-- intent: mood_unhappy
+- intent: help
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - can you help me?
+    - I need some assistance
+    - what can you do for me?
+    - how can I get help?
 
-- intent: bot_challenge
+- intent: faq
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-- intent: ask_leave
-  examples: |
-    - I want to take a leave
-    - How many days of leave am I allowed?
-    - Can I take a leave next week?
-  entities:
-    - leave
-
-- intent: ask_claim
-  examples: |
-    - How do I make a claim?
-    - Can I claim for medical expenses?
-  entities:
-    - claim
-
-- intent: ask_feedback
-  examples: |
-    - I want to provide feedback
-    - How do I give feedback?
-
-- intent: ask_connect_hr
-  examples: |
-    - How do I contact HR?
-    - Can you connect me to HR
-
-- intent: inform
-  examples: |
-    - Can you tell me about the company's policies on vacation time?
-    - How many vacation days do employees get?
-    - How do I apply for a leave of absence?
-    - What are the company's benefits?
-    - What is the process for filing an expense claim?
+    - what is your policy on sick leave?
+    - how many days of vacation am I
