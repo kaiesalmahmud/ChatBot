@@ -1,0 +1,83 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thank_you
+  - affirm
+  - deny
+  - ask_routine_query
+  - ask_common_question
+  - connect_hr
+  - submit_feedback
+  - take_action
+
+entities:
+  - query_type
+  - action_type
+  - leave_type
+  - leave_days
+  - claim_type
+  - claim_amount
+
+slots:
+  query_type:
+    type: categorical
+    values:
+      - routine
+      - common
+  action_type:
+    type: categorical
+    values:
+      - leave
+      - claim
+  leave_type:
+    type: categorical
+    values:
+      - sick
+      - annual
+      - unpaid
+  leave_days:
+    type: unfeaturized
+  claim_type:
+    type: categorical
+    values:
+      - medical
+      - travel
+      - other
+  claim_amount:
+    type: unfeaturized
+
+responses:
+  utter_greet:
+  - text: "Hello! How may I assist you today?"
+  utter_goodbye:
+  - text: "Goodbye! Have a nice day."
+  utter_ask_routine_query:
+  - text: "Please ask your routine query."
+  utter_ask_common_question:
+  - text: "Please ask your question from the common questions list."
+  utter_connect_hr:
+  - text: "Connecting you to HR personnel. Please hold on."
+  utter_submit_feedback:
+  - text: "Thanks for your feedback!"
+  utter_leave_application:
+  - text: "Your leave application for {leave_days} days of {leave_type} leave has been submitted successfully."
+  utter_claim_application:
+  - text: "Your {claim_type} claim request of {claim_amount} amount has been submitted successfully."
+  utter_default:
+  - text: "Sorry, I couldn't understand. Please try again."
+  utter_iamabot:
+  - text: "I am a chatbot for Robi."
+
+actions:
+  - action_submit_leave_application
+  - action_submit_claim_application
+  - action_generate_analytics
+  - action_see_dashboard
+  - action_get_query_box
+  - action_view_faq
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
